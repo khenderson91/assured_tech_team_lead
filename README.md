@@ -261,7 +261,7 @@ Microsoft Purview is a very comprehensive data governance tool which offer data 
 
 - Implementing schema contracts for each of the models to be exposed. Through defining, governing and abiding by schema contracts, both data consumers and producers can be confident that the data is in a useful state. Depending on the data format, tools such as JSONSchema can be used to verify that an incoming payload matches the schema and can therefore be processed. Schema contracts would need to be agreed and reviewed frequently to ensure they are fit for purpose.
 
-- CI/CD testing can be implemented to prevent poor data or breaking changes from being promoted to the production system. Through scehma checks throughout the CI/CD pipeline, code merges can be blocked if there is a schema mismatch. 
+- CI/CD testing can be implemented to prevent poor data or breaking changes from being promoted to the production system. Through schema checks throughout the CI/CD pipeline, code merges can be blocked if there is a schema mismatch. 
 
 ---
 
@@ -284,7 +284,7 @@ The purpose of the onboarding process is to establish early confidence and clari
 **Phase 1 - limited to 2 weeks**
 
 - Introduction to the team: pair with a buddy, learn the working culture i.e. daily stand ups, scrum of scrums and any other ceremonies.
-- Environment setup: Work through a documented guidfe to set up the macnine (Databricks, dbt, git).
+- Environment setup: Work through a documented guide to set up the machine (Databricks, dbt, git).
 - Product overview: Learn the business goals, domain and what the products being offered do in order to enrich the understanding of how the data pipelines being delivered impact the business and its customers. 
 - First technical task: triage or debug a minor issue or add a small feature to a simple area of code. 
 
@@ -296,14 +296,14 @@ The purpose of the onboarding process is to establish early confidence and clari
 
 **Phase 3**
 
-- Independant working: completion of more complicated tasks with minimal peer programming whilst still maintaining code reviews for increasingly complicated code changes.
+- Independent working: completion of more complicated tasks with minimal peer programming whilst still maintaining code reviews for increasingly complicated code changes.
 - Identify strengths and weaknesses when working with the pipelines in order to tailor the next areas to focus upskilling.
 
 ### Tools & techniques for skill development
 
 - Domain focussed learning:  if there are weak areas within a new employee's skillset, encourage them to take on an L&D task alongside a low risk task related to this subject. For example incremental strategies and configurations within DBT.
 
-- Proivision of a development environment which can be used to trial ideas without it affecting any production pipelines.
+- Provision of a development environment which can be used to trial ideas without it affecting any production pipelines.
 
 - Career development plan: identify different career paths that can be taken within the team and suggest potential learning resources that can be used to achieve the next step on the career plan.
 
@@ -321,7 +321,7 @@ Metrics of success can be broken down into two logical sections, Technical and c
 
 - Story point completion/code completion: if working within a scrum methodology monitoring the number of story points completed per sprint is a good metric to follow as it can easily be seen if there is a variation to the output. This can apply both to an individual or to an entire scrum team. 
 
-- Documentaion: number of meaningful and engaging documents created that have been used within the business. 
+- Documentation: number of meaningful and engaging documents created that have been used within the business. 
 
 - Ownership: number of areas/projects the team member is accountable for.
 

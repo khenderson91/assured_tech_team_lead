@@ -25,7 +25,7 @@ You're tasked with building a modern, scalable data platform that ingests data f
 ---
 
 ### Architecture Design
-The chosen architecture uses a cloud native approach implementing a Medallion approach within the Data Warehouse to ensure flexibility, scalability and reliability.
+The chosen architecture uses a cloud native approach implementing a Medallion methodology within the Data Warehouse to ensure flexibility, scalability and reliability.
 
 Vendor agnostic:
 ![Vendor agnostic Data Architecture](img//data_architecture.jpg)
@@ -45,7 +45,7 @@ External Data sources come in many different forms (csv, xlsx, json, xml) and fr
 
 The ingestion layer is designed to extract data from the source systems and sink the into the bronze/raw layer of the Data Warehouse.
 
-Depending upon the business requirements, the ingestion layer could suppose batch and/or streaming processing. Batch processing would be a scheduled extract e.g. daily with an overnight pipeline. Streaming would be close to real-time data constantly flowing through the platform ready for real time analysis/insights.    
+Depending upon the business requirements, the ingestion layer could support batch and/or streaming processing. Batch processing would be a scheduled extract e.g. daily with an overnight pipeline. Streaming would be close to real-time data constantly flowing through the platform ready for real time analysis/insights.    
 
 *Tool selection* 
 

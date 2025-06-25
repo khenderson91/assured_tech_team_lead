@@ -94,13 +94,13 @@ The chosen platform for this is Apache Airflow. Airflow allows for the creation 
 
 **Scalability**
 
-- Utilising auto-scaling or serverless compute within the cloud data warehouse. In the scenario where a business requires a scheduled data refresh, the clusters need only to be span up during operational hours. Once the pipelines have been completed, these clusters can be span back down. This prevents unnecessary resources being used and reduces cost of the compute layer. 
+- The data lakehouse has the option of either using dedicated compute configurted within the platform or using serverless compute to prevent the need for clusters to spin up before a request can be handled. In the scenario where a business requires a scheduled data refresh, the clusters need only to be span up during operational hours. Once the pipelines have been completed, these clusters can be span back down. This prevents unnecessary resources being used and reduces cost of the compute layer. If there is a need for frequent querying of the data in a timely manner, then serverless compute may be a preferred option.
 
-- Configuring the orchestration tool to run processes in parallel providing the configured compute allows. Some small independent parts of the pipelines may be able to run in parallel without the need for an increase to the cluster size, this will speed up the time execution time of the main pipeline and therefore reduce compute cost through spinning clusters down sooner. 
+- Configuring the orchestration tool to run processes in parallel, providing the configured compute allows. Some small independent parts of the pipelines may be able to run in parallel without the need for an increase to the cluster size, this will speed up the time execution time of the main pipeline and therefore reduce compute cost through spinning clusters down sooner. 
 
-- Configuring the modelling tool (dbt) to use incremental models. Using incremental models means that each time the pipeline executes, it only needs to process new or changed records - there is no need to re-process data that has not changed. Similar to above, this will reduce the total execution time, ensures the pipeline is as efficient as possible and keeps the computational burden to a minimum.
+- Configuring the modelling tool (dbt) to use incremental models. Using incremental loads means that each time the pipeline executes, it only needs to process new or changed records - there is no need to re-process data that has not changed. Similar to above, this will reduce the total execution time, ensures the pipeline is as efficient as possible and keeps the computational burden to a minimum.
 
-Utilizing cloud data warehouses that separate compute and storage ensures cost-effective scaling.
+- Utilizing cloud data warehouses that separate compute and storage ensures cost-effective scaling.
 
 **Data Quality**
 
@@ -126,7 +126,7 @@ To combat some of the trade-offs for vendor lock in, it is possible to self-host
 
 Using a cloud data lakehouse also allows for the separation of compute and storage. This helps to reduce cost through decoupling and allowing for compute to spin down when not in use. Whilst this is possible in a self-managed infrastructure, it would require a lot of work to setup and maintain. 
 
-Consideration will also need to be given to whether the business requires real-time analytics. If so, the architecture would need to be designed to support streaming. If real-time analytics, then services such as Apache Kafka can be implemented within the architecture to act as a pub-sub method. Upstream services can publish messages to Kafka topics as and when required, from here software such as Apache Airbyte can be used to subscribe to the Kafka topic in order to consume the data in near real time. This would have an impact to the complexity of the architecture and possibly the cost in terms of compute as data will need to be in transit through the Lakehouse layers constantly meaning there may need to be compute being used constantly. 
+Consideration will also need to be given to whether the business requires real-time analytics. If so, the architecture would need to be designed to support streaming. If real-time analytics are a requirement, then services such as Apache Kafka can be implemented within the architecture to act as a pub-sub method. Upstream services can publish messages to Kafka topics as and when required, from here software such as Apache Airbyte can be used to subscribe to the Kafka topic in order to consume the data in near real time. This would have an impact to the complexity of the architecture and possibly the cost in terms of compute as data will need to be in transit through the Lakehouse layers constantly. 
 If batch analytics suffice, then a simple scheduled process would work well. This would reduce the complexity and cost of the infrastructure. 
 
 
